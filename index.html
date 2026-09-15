@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#6BCBC1">
+
+    <meta
+        name="description"
+        content="Consultorio Integral OC - Atención odontológica integral y agenda de citas en línea en Tarija."
+    >
+
+    <meta property="og:title" content="Consultorio Integral OC | Agenda tu cita">
+    <meta
+        property="og:description"
+        content="Agenda tu cita odontológica de forma rápida y sencilla."
+    >
+    <meta property="og:type" content="website">
+
+    <title>Consultorio Integral OC | Agenda tu cita</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- =========================================================
+     SVG ICONS
+========================================================= -->
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+
+    <!-- Tooth -->
+    <symbol id="i-tooth" viewBox="0 0 24 24">
+        <path
+            d="M8.5 3.5C6.5 2.8 4.2 3.7 3.4 5.8c-.8 2.1.1 4.2.6 5.8.5 1.6.7 4.5 1.3 6.5.4 1.4 1 2.5 2 2.5 1.3 0 1.5-1.5 1.8-3.2.3-1.5.7-3.2 1.9-3.2s1.6 1.7 1.9 3.2c.3 1.7.5 3.2 1.8 3.2 1 0 1.6-1.1 2-2.5.6-2 .8-4.9 1.3-6.5.5-1.6 1.4-3.7.6-5.8-.8-2.1-3.1-3-5.1-2.3L12 4.1 8.5 3.5Z"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+        />
+    </symbol>
+
+    <!-- Arrow -->
+    <symbol id="i-arrow" viewBox="0 0 24 24">
+        <path
+            d="M5 12h13M13 6l6 6-6 6"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+        />
+    </symbol>
+
+    <!-- Calendar -->
+    <symbol id="i-calendar" viewBox="0 0 24 24">
+        <rect
+            x="3"
+            y="4"
+            width="18"
+            height="17"
+            rx="2"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+        />
+        <path
+            d="M7 2v4M17 2v4M3 9h18"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+        />
+    </symbol>
+
+    <!-- Phone -->
+    <symbol id="i-phone" viewBox="0 0 24 24">
+        <path
+            d="M6.7 3.5 9.3 3c.7-.1 1.3.3 1.5 1l1 3c.2.6 0 1.2-.5 1.6L9.6 10c1 2 2.4 3.4 4.4 4.4l1.4-1.7c.4-.5 1-.7 1.6-.5l3 1c.7.2 1.1.8 1 1.5l-.5 2.6c-.1.7-.7 1.2-1.4 1.2C10.4 18.5 5.5 13.6 5.5 4.9c0-.7.5-1.3 1.2-1.4Z"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linejoin="round"
+        />
+    </symbol>
+
+    <!-- Check -->
+    <symbol id="i-check" viewBox="0 0 24 24">
+        <path
+            d="m5 12 4 4L19 6"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+        />
+    </symbol>
+
+    <!-- Plus -->
+    <symbol id="i-plus" viewBox="0 0 24 24">
+        <path
+            d="M12 5v14M5 12h14"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+        />
+    </symbol>
+
+    <!-- Smile -->
+    <symbol id="i-smile" viewBox="0 0 24 24">
+        <circle
+            cx="12"
+            cy="12"
+            r="8.5"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+        />
+        <path
+            d="M8.5 14.5c1 1.3 2.1 2 3.5 2s2.5-.7 3.5-2"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+        />
+        <circle cx="9" cy="10" r=".8" fill="currentColor"/>
+        <circle cx="15" cy="10" r=".8" fill="currentColor"/>
+    </symbol>
+
+    <!-- Spark -->
+    <symbol id="i-spark" viewBox="0 0 24 24">
+        <path
+            d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M18.4 5.6l-2.8 2.8M8.4 15.6l-2.8 2.8"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+        />
+    </symbol>
+
+    <!-- Shield -->
+    <symbol id="i-shield" viewBox="0 0 24 24">
+        <path
+            d="M12 3 19 6v5c0 4.5-2.7 7.9-7 10-4.3-2.1-7-5.5-7-10V6l7-3Z"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linejoin="round"
+        />
+        <path
+            d="m8.5 12 2.2 2.2 4.8-5"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+        />
+    </symbol>
+
+    <!-- Instagram -->
+    <symbol id="i-instagram" viewBox="0 0 24 24">
+        <rect
+            x="3.5"
+            y="3.5"
+            width="17"
+            height="17"
+            rx="5"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+        />
+        <circle
+            cx="12"
+            cy="12"
+            r="4"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+        />
+        <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+    </symbol>
+
+    <!-- Facebook -->
+    <symbol id="i-facebook" viewBox="0 0 24 24">
+        <path
+            d="M14 21v-8h2.8l.4-3H14V8.1c0-.9.3-1.5 1.6-1.5h1.7V4a20 20 0 0 0-2.5-.2C12.3 3.8 11 5.1 11 7.6V10H8.5v3H11v8"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+        />
+    </symbol>
+
+    <!-- WhatsApp -->
+    <symbol id="i-whatsapp" viewBox="0 0 24 24">
+        <path
+            d="M20.5 11.5a8.5 8.5 0 0 1-12.8 7.3L3.5 20l1.2-4A8.5 8.5 0 1 1 20.5 11.5Z"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+        />
+        <path
+            d="M8.5 8.5c.3-.4.7-.4 1-.1l1 1.2c.3.3.3.6.1.9l-.6.7c.7 1.3 1.6 2.2 2.9 2.9l.7-.6c.3-.2.6-.2.9.1l1.2 1c.3.3.3.7-.1 1-.5.6-1.3.9-2.1.7-3.5-.8-6-3.3-6.8-6.8-.2-.8.1-1.6.7-2.1Z"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.3"
+            stroke-linejoin="round"
+        />
+    </symbol>
+
+</svg>
+
+
+<!-- =========================================================
+     TOP BAR
+========================================================= -->
+
+<div class="topbar">
+    <div class="container topbar__content">
+
+        <span>
+            Atención dental integral · Lun–Vie 08:30–19:00 · Sáb 09:00–13:00
+        </span>
+
+        <a href="tel:+59170535069">
+            <svg aria-hidden="true">
+                <use href="#i-phone"></use>
+            </svg>
+            +591 705 35069
+        </a>
+
+    </div>
+</div>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="header">
+
+    <div class="container header-content">
+
+        <a href="#" class="logo" aria-label="Consultorio Integral OC">
+            <span class="logo__icon">
+                <svg aria-hidden="true">
+                    <use href="#i-tooth"></use>
+                </svg>
+            </span>
+
+            <span>
+                <strong>Consultorio</strong>
+                <small>Integral OC</small>
+            </span>
+        </a>
+
+
+        <nav class="nav" id="main-nav">
+
+            <a href="#tratamientos">Tratamientos</a>
+
+            <a href="#como-funciona">Cómo funciona</a>
+
+            <a href="#agenda">Agenda</a>
+
+            <a href="#preguntas">Preguntas</a>
+
+        </nav>
+
+
+        <div class="header__actions">
+
+            <a
+                href="https://wa.me/59170535069"
+                class="btn btn--whatsapp"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg aria-hidden="true">
+                    <use href="#i-whatsapp"></use>
+                </svg>
+
+                WhatsApp
+            </a>
+
+
+            <a href="#agenda" class="btn btn--primary">
+                Agendar cita
+            </a>
+
+
+            <button
+                class="menu-toggle"
+                id="menu-toggle"
+                type="button"
+                aria-label="Abrir menú"
+                aria-expanded="false"
+                aria-controls="main-nav"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<main>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero">
+
+    <div class="container hero__grid">
+
+        <div class="hero__content reveal">
+
+            <p class="eyebrow">
+                Consultorio Integral OC · Tarija
+            </p>
+
+            <h1>
+                Cuidamos tu sonrisa con
+                <span>calma y claridad.</span>
+            </h1>
+
+            <p class="hero__description">
+                Atención odontológica integral para cuidar tu salud bucal
+                con un servicio cercano, profesional y pensado para toda la familia.
+            </p>
+
+
+            <div class="hero__actions">
+
+                <a href="#agenda" class="btn btn--primary btn--large">
+                    <svg aria-hidden="true">
+                        <use href="#i-calendar"></use>
+                    </svg>
+
+                    Agendar mi cita
+                </a>
+
+
+                <a href="#tratamientos" class="btn btn--secondary btn--large">
+                    Ver tratamientos
+
+                    <svg aria-hidden="true">
+                        <use href="#i-arrow"></use>
+                    </svg>
+                </a>
+
+            </div>
+
+
+            <div class="hero__trust">
+
+                <div class="trust-item">
+                    <svg aria-hidden="true">
+                        <use href="#i-check"></use>
+                    </svg>
+
+                    Atención personalizada
+                </div>
+
+                <div class="trust-item">
+                    <svg aria-hidden="true">
+                        <use href="#i-check"></use>
+                    </svg>
+
+                    Agenda en línea
+                </div>
+
+                <div class="trust-item">
+                    <svg aria-hidden="true">
+                        <use href="#i-check"></use>
+                    </svg>
+
+                    Atención familiar
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero__visual reveal reveal-delay-1">
+
+            <div class="hero__image-wrap">
+
+                <img
+                    src="https://images.pexels.com/photos/3845766/pexels-photo-3845766.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                    alt="Profesional odontológico atendiendo a un paciente"
+                    loading="eager"
+                >
+
+            </div>
+
+
+            <div class="floating-card floating-card--reviews">
+
+                <span class="floating-card__icon">
+                    <svg aria-hidden="true">
+                        <use href="#i-smile"></use>
+                    </svg>
+                </span>
+
+                <div>
+                    <strong>Tu sonrisa importa</strong>
+                    <span>Atención cercana y profesional</span>
+                </div>
+
+            </div>
+
+
+            <div class="floating-card floating-card--appointment">
+
+                <span class="floating-card__icon">
+                    <svg aria-hidden="true">
+                        <use href="#i-calendar"></use>
+                    </svg>
+                </span>
+
+                <div>
+                    <strong>Agenda en línea</strong>
+                    <span>Consulta horarios disponibles</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     TRATAMIENTOS
+========================================================= -->
+
+<section class="section treatments" id="tratamientos">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <p class="eyebrow">
+                Atención odontológica
+            </p>
+
+            <h2 class="section-title">
+                Tratamientos para cuidar tu sonrisa.
+            </h2>
+
+            <p class="section-copy">
+                Conoce algunos de los servicios disponibles y agenda
+                tu consulta según el motivo de tu visita.
+            </p>
+
+        </div>
+
+
+        <div class="treatments-carousel reveal">
+
+            <button
+                class="carousel-btn carousel-btn--prev"
+                id="treatments-prev"
+                type="button"
+                aria-label="Tratamiento anterior"
+            >
+                <svg aria-hidden="true">
+                    <use href="#i-arrow"></use>
+                </svg>
+            </button>
+
+
+            <div class="treatments-track" id="treatments-track">
+
+
+                <!-- CARD 1 -->
+
+                <article class="treatment-card">
+
+                    <div class="treatment-card__image">
+
+                        <img
+                            src="https://images.pexels.com/photos/3845983/pexels-photo-3845983.jpeg?auto=compress&cs=tinysrgb&w=800"
+                            alt="Consulta odontológica general"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="treatment-card__content">
+
+                        <span class="treatment-card__number">01</span>
+
+                        <h3>Odontología general</h3>
+
+                        <p>
+                            Evaluación y atención integral para mantener
+                            una buena salud bucal.
+                        </p>
+
+                        <a href="#agenda" class="text-link">
+                            Agendar este tratamiento
+
+                            <svg aria-hidden="true">
+                                <use href="#i-arrow"></use>
+                            </svg>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CARD 2 -->
+
+                <article class="treatment-card">
+
+                    <div class="treatment-card__image">
+
+                        <img
+                            src="https://images.pexels.com/photos/3762453/pexels-photo-3762453.jpeg?auto=compress&cs=tinysrgb&w=800"
+                            alt="Limpieza y cuidado dental"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="treatment-card__content">
+
+                        <span class="treatment-card__number">02</span>
+
+                        <h3>Limpieza dental</h3>
+
+                        <p>
+                            Cuidado preventivo para mantener tus dientes
+                            limpios y saludables.
+                        </p>
+
+                        <a href="#agenda" class="text-link">
+                            Agendar este tratamiento
+
+                            <svg aria-hidden="true">
+                                <use href="#i-arrow"></use>
+                            </svg>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CARD 3 -->
+
+                <article class="treatment-card">
+
+                    <div class="treatment-card__image">
+
+                        <img
+                            src="https://images.pexels.com/photos/19775897/pexels-photo-19775897.jpeg?auto=compress&cs=tinysrgb&w=800"
+                            alt="Atención odontológica infantil"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="treatment-card__content">
+
+                        <span class="treatment-card__number">03</span>
+
+                        <h3>Odontopediatría</h3>
+
+                        <p>
+                            Atención dental pensada para acompañar
+                            el cuidado de los más pequeños.
+                        </p>
+
+                        <a href="#agenda" class="text-link">
+                            Agendar este tratamiento
+
+                            <svg aria-hidden="true">
+                                <use href="#i-arrow"></use>
+                            </svg>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CARD 4 -->
+
+                <article class="treatment-card">
+
+                    <div class="treatment-card__image">
+
+                        <img
+                            src="https://images.pexels.com/photos/6528857/pexels-photo-6528857.jpeg?auto=compress&cs=tinysrgb&w=800"
+                            alt="Tratamiento de endodoncia"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="treatment-card__content">
+
+                        <span class="treatment-card__number">04</span>
+
+                        <h3>Endodoncia</h3>
+
+                        <p>
+                            Atención especializada para tratar problemas
+                            relacionados con el interior del diente.
+                        </p>
+
+                        <a href="#agenda" class="text-link">
+                            Agendar este tratamiento
+
+                            <svg aria-hidden="true">
+                                <use href="#i-arrow"></use>
+                            </svg>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CARD 5 -->
+
+                <article class="treatment-card">
+
+                    <div class="treatment-card__image">
+
+                        <img
+                            src="https://images.pexels.com/photos/6529056/pexels-photo-6529056.jpeg?auto=compress&cs=tinysrgb&w=800"
+                            alt="Tratamiento de ortodoncia"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+                    <div class="treatment-card__content">
+
+                        <span class="treatment-card__number">05</span>
+
+                        <h3>Ortodoncia</h3>
+
+                        <p>
+                            Evaluación y seguimiento para mejorar
+                            la posición y función de los dientes.
+                        </p>
+
+                        <a href="#agenda" class="text-link">
+                            Agendar este tratamiento
+
+                            <svg aria-hidden="true">
+                                <use href="#i-arrow"></use>
+                            </svg>
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <button
+                class="carousel-btn carousel-btn--next"
+                id="treatments-next"
+                type="button"
+                aria-label="Siguiente tratamiento"
+            >
+                <svg aria-hidden="true">
+                    <use href="#i-arrow"></use>
+                </svg>
+            </button>
+
+        </div>
+
+
+        <div class="carousel-dots" id="treatments-dots"></div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     AGENDA
+========================================================= -->
+
+<section class="section booking" id="agenda">
+
+    <div class="container booking__grid">
+
+
+        <!-- INTRO -->
+
+        <div class="booking__intro reveal">
+
+            <p class="eyebrow">
+                Reserva en línea
+            </p>
+
+            <h2 class="section-title">
+                Agenda tu cita directamente aquí.
+            </h2>
+
+            <p class="section-copy">
+                Selecciona un día y horario disponible y completa
+                tus datos para solicitar tu cita.
+            </p>
+
+
+            <div class="booking__features">
+
+                <span>
+                    <strong>01</strong>
+                    Elige tu tratamiento
+                </span>
+
+                <span>
+                    <strong>02</strong>
+                    Selecciona fecha y hora
+                </span>
+
+                <span>
+                    <strong>03</strong>
+                    Completa tus datos
+                </span>
+
+                <span>
+                    <strong>04</strong>
+                    Confirma tu cita
+                </span>
+
+            </div>
+
+
+            <div class="booking__note">
+
+                <svg aria-hidden="true">
+                    <use href="#i-shield"></use>
+                </svg>
+
+                <p>
+                    La disponibilidad mostrada corresponde a los horarios
+                    habilitados por el consultorio.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- CALENDAR -->
+
+        <div class="booking-card reveal reveal-delay-1">
+
+            <div class="booking-card__top">
+
+                <span class="booking-card__icon">
+
+                    <svg aria-hidden="true">
+                        <use href="#i-calendar"></use>
+                    </svg>
+
+                </span>
+
+
+                <div>
+
+                    <strong>Agenda tu cita</strong>
+
+                    <span>
+                        Selecciona un día y horario disponible
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="booking-calendar">
+
+                <iframe
+                    src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3_lkjiIAkSAeP5kwtfee0TY84_sZtoFK8mkeDJ-uHdzotuFUKhaoMn6QBntR6tcJfdfJz_tMiK?gv=true"
+                    title="Agenda de citas del Consultorio Integral OC"
+                    loading="lazy"
+                ></iframe>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FAQ
+========================================================= -->
+
+<section class="section faq" id="preguntas">
+
+    <div class="container faq__grid">
+
+
+        <div class="section-heading reveal">
+
+            <p class="eyebrow">
+                Preguntas frecuentes
+            </p>
+
+            <h2 class="section-title">
+                Antes de tu cita.
+            </h2>
+
+            <p class="section-copy">
+                Algunas respuestas que pueden ayudarte antes de reservar.
+            </p>
+
+        </div>
+
+
+        <div class="faq-list">
+
+
+            <details class="faq-item reveal">
+
+                <summary>
+                    <span>¿Cómo reservo una cita?</span>
+
+                    <svg aria-hidden="true">
+                        <use href="#i-plus"></use>
+                    </svg>
+                </summary>
+
+                <p>
+                    Dirígete a la sección “Agenda tu cita”, selecciona
+                    un horario disponible y completa los datos solicitados.
+                </p>
+
+            </details>
+
+
+            <details class="faq-item reveal">
+
+                <summary>
+                    <span>¿Qué debo llevar a mi primera consulta?</span>
+
+                    <svg aria-hidden="true">
+                        <use href="#i-plus"></use>
+                    </svg>
+                </summary>
+
+                <p>
+                    Lleva tu documento de identificación y, si corresponde,
+                    estudios o información odontológica previa que pueda
+                    ser útil para tu atención.
+                </p>
+
+            </details>
+
+
+            <details class="faq-item reveal">
+
+                <summary>
+                    <span>¿Atienden emergencias dentales?</span>
+
+                    <svg aria-hidden="true">
+                        <use href="#i-plus"></use>
+                    </svg>
+                </summary>
+
+                <p>
+                    Para consultas urgentes puedes comunicarte directamente
+                    por WhatsApp para conocer la disponibilidad.
+                </p>
+
+            </details>
+
+
+            <details class="faq-item reveal">
+
+                <summary>
+                    <span>¿Puedo consultar antes de agendar?</span>
+
+                    <svg aria-hidden="true">
+                        <use href="#i-plus"></use>
+                    </svg>
+                </summary>
+
+                <p>
+                    Sí. Puedes comunicarte mediante WhatsApp si necesitas
+                    realizar una consulta antes de reservar tu horario.
+                </p>
+
+            </details>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CONTACT CTA
+========================================================= -->
+
+<section class="contact-cta">
+
+    <div class="container contact-cta__content reveal">
+
+        <div>
+
+            <p class="eyebrow">
+                ¿Tienes alguna consulta?
+            </p>
+
+            <h2>
+                Estamos para ayudarte.
+            </h2>
+
+            <p>
+                Escríbenos por WhatsApp o agenda directamente
+                desde nuestro calendario.
+            </p>
+
+        </div>
+
+
+        <div class="contact-cta__actions">
+
+            <a
+                href="https://wa.me/59170535069"
+                class="btn btn--whatsapp btn--large"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <svg aria-hidden="true">
+                    <use href="#i-whatsapp"></use>
+                </svg>
+
+                Escribir por WhatsApp
+            </a>
+
+
+            <a href="#agenda" class="btn btn--light btn--large">
+
+                <svg aria-hidden="true">
+                    <use href="#i-calendar"></use>
+                </svg>
+
+                Agendar cita
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="footer">
+
+    <div class="container footer__grid">
+
+
+        <div class="footer__brand">
+
+            <a href="#" class="logo">
+
+                <span class="logo__icon">
+
+                    <svg aria-hidden="true">
+                        <use href="#i-tooth"></use>
+                    </svg>
+
+                </span>
+
+                <span>
+
+                    <strong>Consultorio</strong>
+                    <small>Integral OC</small>
+
+                </span>
+
+            </a>
+
+
+            <p>
+                Atención odontológica integral con un servicio
+                cercano y profesional.
+            </p>
+
+
+            <div class="footer__social">
+
+                <a
+                    href="#"
+                    aria-label="Instagram"
+                >
+                    <svg aria-hidden="true">
+                        <use href="#i-instagram"></use>
+                    </svg>
+                </a>
+
+                <a
+                    href="#"
+                    aria-label="Facebook"
+                >
+                    <svg aria-hidden="true">
+                        <use href="#i-facebook"></use>
+                    </svg>
+                </a>
+
+                <a
+                    href="https://wa.me/59170535069"
+                    aria-label="WhatsApp"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <svg aria-hidden="true">
+                        <use href="#i-whatsapp"></use>
+                    </svg>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer__column">
+
+            <h3>Explorar</h3>
+
+            <a href="#tratamientos">Tratamientos</a>
+
+            <a href="#como-funciona">Cómo funciona</a>
+
+            <a href="#agenda">Agenda</a>
+
+            <a href="#preguntas">Preguntas frecuentes</a>
+
+        </div>
+
+
+        <div class="footer__column">
+
+            <h3>Horario</h3>
+
+            <span>Lunes – Viernes</span>
+            <strong>08:30 – 19:00</strong>
+
+            <span>Sábados</span>
+            <strong>09:00 – 13:00</strong>
+
+        </div>
+
+
+        <div class="footer__column">
+
+            <h3>Contacto</h3>
+
+            <a href="tel:+59170535069">
+                +591 705 35069
+            </a>
+
+            <span>
+                Zona Alto Senac
+            </span>
+
+            <span>
+                Tarija, Bolivia
+            </span>
+
+            <a
+                href="https://wa.me/59170535069"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Consultar por WhatsApp
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="container footer__bottom">
+
+        <span>
+            © 2026 Consultorio Integral OC
+        </span>
+
+        <span>
+            Sitio web desarrollado por RENVO
+        </span>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================================================
+     FIXED MOBILE BOOKING
+========================================================= -->
+
+<a
+    href="#agenda"
+    class="mobile-booking"
+    aria-label="Ir a la agenda"
+>
+
+    <svg aria-hidden="true">
+        <use href="#i-calendar"></use>
+    </svg>
+
+    Agendar cita
+
+</a>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script src="script.js" defer></script>
+
+</body>
+</html>
