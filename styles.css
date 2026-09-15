@@ -1,0 +1,2155 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
+
+
+/* ==========================================================================
+   01. VARIABLES DE DISEÑO
+   ========================================================================== */
+
+:root {
+
+    /* ----------------------------------------------------------------------
+       COLORES PRINCIPALES
+       ---------------------------------------------------------------------- */
+
+    --primary: #6BCBC1;
+    --primary-light: #DDF5F2;
+    --primary-lighter: #F1FBFA;
+    --primary-dark: #3E9F97;
+
+    /* ----------------------------------------------------------------------
+       COLORES SECUNDARIOS
+       ---------------------------------------------------------------------- */
+
+    --secondary: #0F6663;
+    --secondary-dark: #084A48;
+    --secondary-light: #E8F6F5;
+
+    /* ----------------------------------------------------------------------
+       FONDOS
+       ---------------------------------------------------------------------- */
+
+    --background: #F8FCFB;
+    --background-alt: #EEF8F6;
+    --white: #FFFFFF;
+
+    /* ----------------------------------------------------------------------
+       TEXTOS
+       ---------------------------------------------------------------------- */
+
+    --text: #173D3B;
+    --text-dark: #0B302E;
+    --text-soft: #5F7D7A;
+    --text-light: #7F9996;
+
+    /* ----------------------------------------------------------------------
+       BORDES
+       ---------------------------------------------------------------------- */
+
+    --border: #D8EBE8;
+    --border-light: #E8F2F0;
+
+    /* ----------------------------------------------------------------------
+       ESTADOS
+       ---------------------------------------------------------------------- */
+
+    --success: #3E9F97;
+    --success-light: #E2F5F2;
+
+    /* ----------------------------------------------------------------------
+       SOMBRAS
+       ---------------------------------------------------------------------- */
+
+    --shadow-sm: 0 6px 20px rgba(15, 102, 99, 0.06);
+    --shadow-md: 0 15px 40px rgba(15, 102, 99, 0.10);
+    --shadow-lg: 0 25px 70px rgba(15, 102, 99, 0.14);
+
+    /* ----------------------------------------------------------------------
+       TIPOGRAFÍA
+       ---------------------------------------------------------------------- */
+
+    --font-body: "DM Sans", sans-serif;
+    --font-heading: "Manrope", sans-serif;
+
+    /* ----------------------------------------------------------------------
+       MEDIDAS
+       ---------------------------------------------------------------------- */
+
+    --container: 1180px;
+
+    --radius-sm: 12px;
+    --radius-md: 22px;
+    --radius-lg: 32px;
+    --radius-pill: 999px;
+
+    --transition: 0.25s ease;
+}
+
+
+/* ==========================================================================
+   02. RESET
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    background: var(--background);
+    color: var(--text);
+
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button {
+    font: inherit;
+}
+
+svg {
+    display: block;
+}
+
+::selection {
+    background: var(--primary);
+    color: var(--secondary-dark);
+}
+
+
+/* ==========================================================================
+   03. CONTENEDOR
+   ========================================================================== */
+
+.container {
+    width: min(calc(100% - 40px), var(--container));
+    margin-inline: auto;
+}
+
+
+/* ==========================================================================
+   04. TOPBAR
+   ========================================================================== */
+
+.topbar {
+    background: var(--secondary-dark);
+    color: rgba(255, 255, 255, 0.86);
+
+    font-size: 0.78rem;
+}
+
+.topbar__content {
+    min-height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.topbar a {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    color: var(--primary);
+    font-weight: 600;
+
+    transition: color var(--transition);
+}
+
+.topbar a:hover {
+    color: var(--white);
+}
+
+.topbar svg {
+    width: 15px;
+    height: 15px;
+}
+
+
+/* ==========================================================================
+   05. HEADER
+   ========================================================================== */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    border-bottom: 1px solid var(--border-light);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+.header-content {
+    min-height: 76px;
+
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+
+    gap: 30px;
+}
+
+
+/* LOGO */
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+
+    color: var(--secondary-dark);
+}
+
+.logo__icon {
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+    place-items: center;
+
+    background: var(--primary-light);
+    color: var(--secondary);
+
+    border-radius: 14px;
+}
+
+.logo__icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.logo strong,
+.logo small {
+    display: block;
+    line-height: 1.1;
+}
+
+.logo strong {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 800;
+}
+
+.logo small {
+    margin-top: 3px;
+
+    color: var(--text-soft);
+
+    font-size: 0.72rem;
+    font-weight: 600;
+}
+
+
+/* NAV */
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 28px;
+}
+
+.nav a {
+    position: relative;
+
+    color: var(--text-soft);
+
+    font-size: 0.88rem;
+    font-weight: 600;
+
+    transition: color var(--transition);
+}
+
+.nav a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--primary);
+
+    transition: width var(--transition);
+}
+
+.nav a:hover {
+    color: var(--secondary);
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
+
+
+/* HEADER ACTIONS */
+
+.header__actions {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+
+/* ==========================================================================
+   06. BOTONES
+   ========================================================================== */
+
+.btn {
+    min-height: 44px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 10px 18px;
+
+    border: 1px solid transparent;
+    border-radius: var(--radius-pill);
+
+    font-size: 0.84rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform var(--transition),
+        background var(--transition),
+        border-color var(--transition),
+        color var(--transition),
+        box-shadow var(--transition);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+
+/* PRIMARY */
+
+.btn--primary {
+    background: var(--primary);
+    color: var(--secondary-dark);
+
+    box-shadow: 0 8px 22px rgba(107, 203, 193, 0.22);
+}
+
+.btn--primary:hover {
+    background: var(--primary-dark);
+    color: var(--white);
+}
+
+
+/* SECONDARY */
+
+.btn--secondary {
+    background: var(--white);
+    color: var(--secondary);
+
+    border-color: var(--border);
+}
+
+.btn--secondary:hover {
+    background: var(--primary-lighter);
+    border-color: var(--primary);
+}
+
+
+/* WHATSAPP */
+
+.btn--whatsapp {
+    background: var(--secondary);
+    color: var(--white);
+}
+
+.btn--whatsapp:hover {
+    background: var(--secondary-dark);
+}
+
+
+/* LIGHT */
+
+.btn--light {
+    background: var(--white);
+    color: var(--secondary-dark);
+}
+
+.btn--light:hover {
+    background: var(--primary-light);
+}
+
+
+/* LARGE */
+
+.btn--large {
+    min-height: 52px;
+    padding: 13px 23px;
+
+    font-size: 0.9rem;
+}
+
+
+/* ==========================================================================
+   07. MENU MOBILE
+   ========================================================================== */
+
+.menu-toggle {
+    display: none;
+
+    width: 44px;
+    height: 44px;
+
+    padding: 0;
+
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    gap: 5px;
+
+    background: var(--primary-lighter);
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    color: var(--secondary);
+
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+
+    width: 19px;
+    height: 2px;
+
+    background: currentColor;
+
+    border-radius: 10px;
+
+    transition: transform var(--transition), opacity var(--transition);
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/* ==========================================================================
+   08. HERO
+   ========================================================================== */
+
+.hero {
+    position: relative;
+
+    padding: 85px 0 100px;
+
+    background:
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(107, 203, 193, 0.18),
+            transparent 28%
+        ),
+        var(--background);
+
+    overflow: hidden;
+}
+
+.hero__grid {
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
+
+    align-items: center;
+
+    gap: 70px;
+}
+
+.hero__content {
+    max-width: 650px;
+}
+
+.eyebrow {
+    margin: 0 0 14px;
+
+    color: var(--secondary);
+
+    font-size: 0.75rem;
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    margin: 0;
+
+    color: var(--text-dark);
+
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 5vw, 4.7rem);
+    line-height: 1.03;
+    letter-spacing: -0.045em;
+}
+
+.hero h1 span {
+    display: block;
+    color: var(--primary-dark);
+}
+
+.hero__description {
+    max-width: 580px;
+
+    margin: 24px 0 30px;
+
+    color: var(--text-soft);
+
+    font-size: 1rem;
+}
+
+.hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+.hero__trust {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 18px;
+
+    margin-top: 28px;
+}
+
+.trust-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    color: var(--text-soft);
+
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+.trust-item svg {
+    width: 16px;
+    height: 16px;
+
+    color: var(--primary-dark);
+}
+
+
+/* HERO IMAGE */
+
+.hero__visual {
+    position: relative;
+
+    min-width: 0;
+}
+
+.hero__image-wrap {
+    position: relative;
+
+    overflow: hidden;
+
+    aspect-ratio: 0.9;
+
+    border-radius: 38px;
+
+    background: var(--primary-light);
+
+    box-shadow: var(--shadow-lg);
+}
+
+.hero__image-wrap img {
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* FLOATING CARDS */
+
+.floating-card {
+    position: absolute;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 14px 17px;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border: 1px solid var(--border-light);
+    border-radius: 17px;
+
+    box-shadow: var(--shadow-md);
+
+    backdrop-filter: blur(12px);
+}
+
+.floating-card__icon {
+    width: 40px;
+    height: 40px;
+
+    display: grid;
+    place-items: center;
+
+    flex-shrink: 0;
+
+    background: var(--primary-light);
+    color: var(--secondary);
+
+    border-radius: 12px;
+}
+
+.floating-card__icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.floating-card strong,
+.floating-card span {
+    display: block;
+}
+
+.floating-card strong {
+    color: var(--text-dark);
+
+    font-size: 0.78rem;
+}
+
+.floating-card span {
+    color: var(--text-soft);
+
+    font-size: 0.68rem;
+}
+
+.floating-card--reviews {
+    left: -28px;
+    bottom: 70px;
+}
+
+.floating-card--appointment {
+    right: -28px;
+    top: 70px;
+}
+
+
+/* ==========================================================================
+   09. SECCIONES GENERALES
+   ========================================================================== */
+
+.section {
+    padding: 100px 0;
+}
+
+.section-heading {
+    max-width: 720px;
+
+    margin-bottom: 50px;
+}
+
+.section-heading--center {
+    margin-inline: auto;
+
+    text-align: center;
+}
+
+.section-title {
+    margin: 0;
+
+    color: var(--text-dark);
+
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3.1rem);
+    line-height: 1.1;
+    letter-spacing: -0.035em;
+}
+
+.section-copy {
+    margin: 18px 0 0;
+
+    color: var(--text-soft);
+
+    font-size: 0.95rem;
+    line-height: 1.75;
+}
+
+
+/* ==========================================================================
+   10. TRATAMIENTOS
+   ========================================================================== */
+/* =========================================================
+   CARRUSEL DE TRATAMIENTOS
+========================================================= */
+
+.treatments-carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-top: 45px;
+}
+
+.treatments-track {
+    display: flex;
+    gap: 24px;
+    width: 100%;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding: 5px 2px 20px;
+}
+
+.treatments-track::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* TARJETAS */
+
+.treatment-card {
+    flex: 0 0 calc((100% - 48px) / 3);
+    min-width: 0;
+    overflow: hidden;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    scroll-snap-align: start;
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.treatment-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+}
+
+
+/* IMAGEN */
+
+.treatment-card__image {
+    width: 100%;
+    height: 230px;
+    overflow: hidden;
+}
+
+.treatment-card__image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.treatment-card:hover .treatment-card__image img {
+    transform: scale(1.04);
+}
+
+
+/* CONTENIDO */
+
+.treatment-card__content {
+    padding: 25px;
+}
+
+.treatment-card__number {
+    display: inline-flex;
+    margin-bottom: 10px;
+    color: var(--primary-dark);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
+.treatment-card h3 {
+    margin-bottom: 10px;
+    color: var(--text-dark);
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 800;
+}
+
+.treatment-card p {
+    min-height: 66px;
+    margin-bottom: 20px;
+    color: var(--text-soft);
+    font-size: 0.95rem;
+    line-height: 1.65;
+}
+.text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--secondary);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.text-link svg {
+    width: 16px;
+    height: 16px;
+    flex: 0 0 16px;
+    display: block;
+}
+
+.text-link:hover {
+    color: var(--primary-dark);
+}
+
+/* BOTONES */
+
+.carousel-btn {
+    flex: 0 0 46px;
+    width: 46px;
+    height: 46px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: var(--white);
+    color: var(--secondary);
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition:
+        background var(--transition),
+        color var(--transition),
+        transform var(--transition);
+    z-index: 3;
+}
+
+.carousel-btn:hover {
+    background: var(--primary);
+    color: var(--white);
+    transform: scale(1.05);
+}
+
+.carousel-btn svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+}
+
+.carousel-btn--prev svg {
+    transform: rotate(180deg);
+}
+
+
+/* INDICADORES */
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.carousel-dot {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: var(--border);
+    cursor: pointer;
+    transition:
+        width var(--transition),
+        background var(--transition);
+}
+
+.carousel-dot.active {
+    width: 24px;
+    border-radius: var(--radius-pill);
+    background: var(--primary-dark);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1024px) {
+
+    .treatment-card {
+        flex: 0 0 calc((100% - 24px) / 2);
+    }
+
+}
+
+
+/* =========================================================
+   MÓVIL
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .treatments-carousel {
+        gap: 10px;
+    }
+
+    .treatments-track {
+        gap: 16px;
+        padding-bottom: 15px;
+        scroll-padding-left: 2px;
+    }
+
+    .treatment-card {
+        flex: 0 0 86%;
+    }
+
+    .treatment-card__image {
+        height: 210px;
+    }
+
+    .treatment-card__content {
+        padding: 22px;
+    }
+
+    .treatment-card p {
+        min-height: auto;
+    }
+
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        flex-basis: 40px;
+    }
+
+}
+
+
+/* =========================================================
+   MÓVIL PEQUEÑO
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .treatment-card {
+        flex-basis: 88%;
+    }
+
+    .treatment-card__image {
+        height: 195px;
+    }
+
+    .treatment-card__content {
+        padding: 20px;
+    }
+
+    .carousel-btn {
+        display: none;
+    }
+
+}
+
+
+/* ==========================================================================
+   12. AGENDA DIGITAL
+   ========================================================================== */
+
+.booking {
+    position: relative;
+
+    overflow: hidden;
+
+    background: var(--secondary-dark);
+
+    color: var(--white);
+}
+
+.booking::before,
+.booking::after {
+    content: "";
+
+    position: absolute;
+
+    border: 60px solid rgba(107, 203, 193, 0.08);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+.booking::before {
+    width: 350px;
+    height: 350px;
+
+    left: -180px;
+    top: -190px;
+}
+
+.booking::after {
+    width: 470px;
+    height: 470px;
+
+    right: -230px;
+    bottom: -310px;
+}
+
+/* =========================================================
+   AGENDA — UNA SOLA COLUMNA EN PC
+========================================================= */
+
+.booking__grid {
+    position: relative;
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+}
+
+
+/* INTRODUCCIÓN */
+
+.booking__intro {
+    min-width: 0;
+    text-align: center;
+}
+
+.booking .eyebrow {
+    color: var(--primary);
+}
+
+.booking .section-title {
+    color: var(--white);
+}
+
+.booking .section-copy {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+
+    color: rgba(255, 255, 255, 0.68);
+}
+
+
+/* =========================================================
+   PASOS DE AGENDA — HORIZONTAL
+========================================================= */
+
+.booking__features {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 12px;
+
+    margin-top: 30px;
+}
+
+.booking__features span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    min-height: 48px;
+
+    padding: 10px 14px;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 14px;
+
+    color: rgba(255, 255, 255, 0.84);
+
+    font-size: 0.76rem;
+    font-weight: 600;
+
+    text-align: center;
+}
+
+.booking__features strong {
+    color: var(--primary);
+
+    font-size: 0.68rem;
+}
+
+
+/* =========================================================
+   NOTA
+========================================================= */
+
+.booking__note {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: 20px;
+
+    color: rgba(255, 255, 255, 0.5);
+
+    font-size: 0.75rem;
+
+    text-align: center;
+}
+
+.booking__note svg {
+    width: 18px;
+    height: 18px;
+
+    flex-shrink: 0;
+
+    color: var(--primary);
+}
+
+.booking__note p {
+    margin: 0;
+}
+
+
+/* NOTA */
+
+.booking__note {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+    margin-top: 20px;
+
+    color: rgba(255, 255, 255, 0.5);
+
+    font-size: 0.75rem;
+}
+
+.booking__note svg {
+    width: 18px;
+    height: 18px;
+
+    flex-shrink: 0;
+
+    color: var(--primary);
+}
+
+.booking__note p {
+    margin: 0;
+}
+
+
+/* CALENDAR CARD */
+
+.booking-card {
+    min-width: 0;
+
+    padding: 25px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.14);
+
+    border-radius: var(--radius-md);
+
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.18);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.booking-card__top {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.booking-card__icon {
+    width: 52px;
+    height: 52px;
+
+    display: grid;
+    place-items: center;
+
+    flex-shrink: 0;
+
+    background: var(--primary);
+    color: var(--secondary-dark);
+
+    border-radius: 15px;
+}
+
+.booking-card__icon svg {
+    width: 25px;
+    height: 25px;
+}
+
+.booking-card__top strong,
+.booking-card__top span {
+    display: block;
+}
+
+.booking-card__top strong {
+    color: var(--white);
+
+    font-family: var(--font-heading);
+    font-size: 1.08rem;
+}
+
+.booking-card__top span {
+    margin-top: 3px;
+
+    color: rgba(255, 255, 255, 0.58);
+
+    font-size: 0.77rem;
+}
+
+
+/* GOOGLE CALENDAR */
+
+.booking-calendar {
+    width: 100%;
+
+    height: 700px;
+
+    overflow: hidden;
+
+    background: var(--white);
+
+    border-radius: 17px;
+}
+
+.booking-calendar iframe {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    min-height: 700px;
+
+    border: 0;
+
+    background: var(--white);
+}
+
+
+/* ==========================================================================
+   13. FAQ
+   ========================================================================== */
+
+.faq {
+    background: var(--white);
+}
+
+.faq__grid {
+    display: grid;
+
+    grid-template-columns: 0.75fr 1.25fr;
+
+    gap: 80px;
+
+    align-items: start;
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.faq-item {
+    overflow: hidden;
+
+    background: var(--background);
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+}
+
+.faq-item summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 19px 20px;
+
+    color: var(--text-dark);
+
+    font-size: 0.88rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary svg {
+    width: 19px;
+    height: 19px;
+
+    flex-shrink: 0;
+
+    color: var(--secondary);
+
+    transition: transform var(--transition);
+}
+
+.faq-item[open] summary svg {
+    transform: rotate(45deg);
+}
+
+.faq-item p {
+    margin: 0;
+
+    padding: 0 20px 20px;
+
+    color: var(--text-soft);
+
+    font-size: 0.8rem;
+    line-height: 1.7;
+}
+
+
+/* ==========================================================================
+   14. CONTACT CTA
+   ========================================================================== */
+
+.contact-cta {
+    padding: 80px 0;
+
+    background: var(--primary-light);
+}
+
+.contact-cta__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 40px;
+}
+
+.contact-cta h2 {
+    margin: 0;
+
+    color: var(--secondary-dark);
+
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.1;
+}
+
+.contact-cta p:not(.eyebrow) {
+    max-width: 600px;
+
+    margin: 15px 0 0;
+
+    color: var(--text-soft);
+}
+
+.contact-cta__actions {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    flex-shrink: 0;
+}
+
+
+/* ==========================================================================
+   15. FOOTER
+   ========================================================================== */
+
+.footer {
+    background: var(--secondary-dark);
+
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.footer__grid {
+    display: grid;
+
+    grid-template-columns: 1.4fr repeat(3, 1fr);
+
+    gap: 45px;
+
+    padding: 70px 0 55px;
+}
+
+.footer .logo {
+    color: var(--white);
+}
+
+.footer .logo small {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.footer__brand > p {
+    max-width: 300px;
+
+    margin: 18px 0 20px;
+
+    font-size: 0.8rem;
+    line-height: 1.7;
+}
+
+.footer__social {
+    display: flex;
+    gap: 8px;
+}
+
+.footer__social a {
+    width: 36px;
+    height: 36px;
+
+    display: grid;
+    place-items: center;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    border-radius: 11px;
+
+    color: var(--primary);
+
+    transition: background var(--transition), transform var(--transition);
+}
+
+.footer__social a:hover {
+    background: rgba(107, 203, 193, 0.15);
+
+    transform: translateY(-2px);
+}
+
+.footer__social svg {
+    width: 17px;
+    height: 17px;
+}
+
+.footer__column {
+    display: flex;
+    flex-direction: column;
+
+    gap: 9px;
+}
+
+.footer__column h3 {
+    margin: 0 0 8px;
+
+    color: var(--white);
+
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+}
+
+.footer__column a,
+.footer__column span {
+    color: rgba(255, 255, 255, 0.56);
+
+    font-size: 0.76rem;
+
+    transition: color var(--transition);
+}
+
+.footer__column a:hover {
+    color: var(--primary);
+}
+
+.footer__column strong {
+    margin-bottom: 6px;
+
+    color: rgba(255, 255, 255, 0.8);
+
+    font-size: 0.76rem;
+}
+
+.footer__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 20px 0;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.09);
+
+    font-size: 0.7rem;
+}
+
+
+/* ==========================================================================
+   16. BOTÓN FIJO MOBILE
+   ========================================================================== */
+
+.mobile-booking {
+    display: none;
+}
+
+
+/* ==========================================================================
+   17. ANIMACIONES
+   ========================================================================== */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(18px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+.reveal-delay-1 {
+    transition-delay: 0.08s;
+}
+
+.reveal-delay-2 {
+    transition-delay: 0.16s;
+}
+
+.reveal-delay-3 {
+    transition-delay: 0.24s;
+}
+
+
+/* ==========================================================================
+   18. TABLET
+   ========================================================================== */
+
+@media (max-width: 1000px) {
+
+    .nav {
+        gap: 17px;
+    }
+
+    .header__actions .btn--whatsapp {
+        display: none;
+    }
+
+    .hero__grid {
+        grid-template-columns: 1fr 0.85fr;
+
+        gap: 40px;
+    }
+
+    .hero {
+        padding: 70px 0 80px;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.4rem, 5vw, 3.7rem);
+    }
+
+    .treatments-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .booking__grid {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .booking__intro {
+        max-width: 800px;
+    }
+
+    .faq__grid {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+    .footer__grid {
+        grid-template-columns: 1.4fr 1fr 1fr;
+    }
+
+    .footer__grid > :last-child {
+        grid-column: 2 / 4;
+    }
+}
+
+
+/* ==========================================================================
+   19. MOBILE
+   ========================================================================== */
+
+@media (max-width: 768px) {
+
+    html {
+        scroll-padding-top: 75px;
+    }
+
+    .container {
+        width: min(calc(100% - 30px), var(--container));
+    }
+
+
+    /* TOPBAR */
+
+    .topbar {
+        display: none;
+    }
+
+
+    /* HEADER */
+
+    .header-content {
+        min-height: 68px;
+
+        grid-template-columns: auto 1fr auto;
+
+        gap: 12px;
+    }
+
+    .nav {
+        position: fixed;
+
+        top: 68px;
+        left: 15px;
+        right: 15px;
+
+        display: none;
+
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 0;
+
+        padding: 10px;
+
+        background: rgba(255, 255, 255, 0.98);
+
+        border: 1px solid var(--border);
+
+        border-radius: 18px;
+
+        box-shadow: var(--shadow-lg);
+
+        backdrop-filter: blur(16px);
+    }
+
+    .nav.active {
+        display: flex;
+    }
+
+    .nav a {
+        padding: 14px 15px;
+
+        border-radius: 10px;
+    }
+
+    .nav a:hover {
+        background: var(--primary-lighter);
+    }
+
+    .nav a::after {
+        display: none;
+    }
+
+    .header__actions {
+        justify-content: flex-end;
+    }
+
+    .header__actions .btn--primary {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        padding: 55px 0 70px;
+    }
+
+    .hero__grid {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+    .hero__content {
+        max-width: none;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.35rem, 11vw, 3.5rem);
+    }
+
+    .hero__description {
+        font-size: 0.92rem;
+    }
+
+    .hero__actions {
+        flex-direction: column;
+    }
+
+    .hero__actions .btn {
+        width: 100%;
+    }
+
+    .hero__trust {
+        gap: 10px 16px;
+    }
+
+    .hero__visual {
+        width: 100%;
+        max-width: 520px;
+
+        margin-inline: auto;
+    }
+
+    .hero__image-wrap {
+        aspect-ratio: 0.95;
+
+        border-radius: 28px;
+    }
+
+    .floating-card {
+        position: absolute;
+
+        max-width: calc(100% - 20px);
+
+        padding: 11px 13px;
+    }
+
+    .floating-card--reviews {
+        left: 10px;
+        bottom: 25px;
+    }
+
+    .floating-card--appointment {
+        right: 10px;
+        top: 25px;
+    }
+
+
+    /* SECTIONS */
+
+    .section {
+        padding: 70px 0;
+    }
+
+    .section-heading {
+        margin-bottom: 35px;
+    }
+
+
+    /* TREATMENTS */
+
+    .treatments-grid {
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+    }
+
+    .treatment-card__image {
+        aspect-ratio: 1.5;
+    }
+
+
+    /* STEPS */
+
+    .steps {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+    .step {
+        padding: 23px 20px;
+
+        display: grid;
+
+        grid-template-columns: auto 1fr;
+
+        column-gap: 15px;
+    }
+
+    .step__number {
+        top: 16px;
+        right: 17px;
+    }
+
+    .step__icon {
+        grid-row: span 2;
+
+        margin: 0;
+    }
+
+    .step h3 {
+        align-self: end;
+    }
+
+    .step p {
+        align-self: start;
+    }
+
+    .how-it-works__tip {
+        align-items: flex-start;
+    }
+
+
+    /* BOOKING */
+
+    .booking {
+        padding: 65px 0;
+    }
+
+    .booking__features {
+        grid-template-columns: 1fr;
+    }
+
+    .booking__features span {
+        justify-content: flex-start;
+    }
+
+    .booking-card {
+        padding: 14px;
+
+        border-radius: 19px;
+    }
+
+    .booking-card__top {
+        padding: 7px 4px 17px;
+        margin-bottom: 14px;
+    }
+
+    .booking-calendar {
+        height: 650px;
+
+        border-radius: 13px;
+    }
+
+    .booking-calendar iframe {
+        min-height: 650px;
+    }
+
+
+    /* FAQ */
+
+    .faq__grid {
+        gap: 30px;
+    }
+
+
+    /* CONTACT */
+
+    .contact-cta {
+        padding: 60px 0;
+    }
+
+    .contact-cta__content {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 25px;
+    }
+
+    .contact-cta__actions {
+        width: 100%;
+
+        flex-direction: column;
+    }
+
+    .contact-cta__actions .btn {
+        width: 100%;
+    }
+
+
+    /* FOOTER */
+
+    .footer__grid {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 35px;
+
+        padding: 55px 0 40px;
+    }
+
+    .footer__grid > :last-child {
+        grid-column: auto;
+    }
+
+    .footer__bottom {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+
+    /* MOBILE BOOKING */
+
+    .mobile-booking {
+        position: fixed;
+
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+
+        z-index: 999;
+
+        min-height: 52px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        gap: 8px;
+
+        background: var(--primary);
+
+        color: var(--secondary-dark);
+
+        border: 1px solid rgba(255, 255, 255, 0.6);
+
+        border-radius: var(--radius-pill);
+
+        box-shadow: 0 12px 30px rgba(8, 74, 72, 0.25);
+
+        font-size: 0.86rem;
+        font-weight: 800;
+    }
+
+    .mobile-booking svg {
+        width: 19px;
+        height: 19px;
+    }
+
+}
+
+
+/* ==========================================================================
+   20. MOBILE PEQUEÑO
+   ========================================================================== */
+
+@media (max-width: 480px) {
+
+    .container {
+        width: min(calc(100% - 24px), var(--container));
+    }
+
+    .logo__icon {
+        width: 39px;
+        height: 39px;
+    }
+
+    .logo strong {
+        font-size: 0.86rem;
+    }
+
+    .logo small {
+        font-size: 0.67rem;
+    }
+
+    .hero {
+        padding-top: 45px;
+    }
+
+    .hero h1 {
+        font-size: 2.35rem;
+    }
+
+    .hero__trust {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .floating-card {
+        gap: 8px;
+
+        padding: 9px 10px;
+    }
+
+    .floating-card__icon {
+        width: 34px;
+        height: 34px;
+    }
+
+    .floating-card__icon svg {
+        width: 17px;
+        height: 17px;
+    }
+
+    .floating-card strong {
+        font-size: 0.68rem;
+    }
+
+    .floating-card span {
+        font-size: 0.58rem;
+    }
+
+    .floating-card--reviews {
+        left: 7px;
+        bottom: 15px;
+    }
+
+    .floating-card--appointment {
+        right: 7px;
+        top: 15px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .treatment-card__content {
+        padding: 20px;
+    }
+
+    .booking-card {
+        padding: 10px;
+    }
+
+    .booking-card__icon {
+        width: 45px;
+        height: 45px;
+    }
+
+    .booking-card__top strong {
+        font-size: 0.95rem;
+    }
+
+    .booking-card__top span {
+        font-size: 0.68rem;
+    }
+
+    .booking-calendar {
+        height: 610px;
+    }
+
+    .booking-calendar iframe {
+        min-height: 610px;
+    }
+
+    .faq-item summary {
+        padding: 17px;
+    }
+
+    .faq-item p {
+        padding: 0 17px 17px;
+    }
+
+    .footer__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer__grid > :last-child {
+        grid-column: auto;
+    }
+
+    .footer__bottom {
+        padding-bottom: 85px;
+    }
+
+}
+
+
+/* ==========================================================================
+   21. REDUCCIÓN DE MOVIMIENTO
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
